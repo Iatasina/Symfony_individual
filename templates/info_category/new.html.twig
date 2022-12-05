@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Новая категория{% endblock %}
+
+{% block body %}
+    <h3>Новая категория</h3>
+
+    {{ include('info_category/_form.html.twig') }}
+
+    <a class="btn btn-primary" href="{{ path('app_info_category_index') }}">Back to list</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Новый клиент{% endblock %}
+
+{% block body %}
+    <h3>Новый клиент</h3>
+
+    {{ include('info_arenda/_form.html.twig') }}
+
+    <a class="btn btn-primary" href="{{ path('app_info_arenda_index') }}">Back to list</a>
+{% endblock %}

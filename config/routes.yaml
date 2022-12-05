@@ -1,0 +1,14 @@
+controllers:
+    resource: ../src/Controller/
+    type: attribute
+home:
+    path: /home
+    controller: App\Controller\HomeController::home
+    
+info_arenda:
+    path: info/arenda/
+    controller: App\Controller\InfoArendaController
+
+info_categoty:
+    path: info/category/
+    controller: App\Controller\InfoCategoryController

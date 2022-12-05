@@ -1,0 +1,50 @@
+{% extends('base.html.twig') %}
+
+{% block title %}
+  {{client.name}}
+{% endblock %}
+
+{% block body %}
+
+  <h2 class="text-center mb-5">{{client.name}}</h2>
+
+  <table class="table table-striped w-50 mx-auto h4 font-weight-normal">
+    <tbody>
+      <tr>
+        <td>ID</td>
+        <td>{{client.id}}</td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>{{client.name}}</td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td>{{client.price}}</td>
+      </tr>
+	  
+	  <tr>
+        <td>Scuare</td>
+        <td>{{client.scuare}}</td>
+      </tr>
+	  <tr>
+        <td>Pronoun</td>
+        <td>{{client.pronoun}}</td>
+      </tr>
+	  <tr>
+        <td>Category</td>
+        <td>{{client.Category}}</td>
+      </tr>
+    </tbody>
+  </table>
+    
+  <div class="text-center">
+    <a class="btn btn-info" href="{{path('edit_client',{id:client.id})}}">Edit</a>
+    <a class="btn btn-danger" href="{{path('delete_client',{id:client.id})}}">Delete</a>
+  </div>
+
+  <div class="text-center mt-2">
+    <a class="btn btn-primary" href="{{path('index')}}">Back</a>
+  </div>
+  
+{% endblock %}

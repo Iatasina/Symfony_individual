@@ -1,0 +1,13 @@
+{% extends('index.html.twig') %}
+
+{% block title %}
+  {% for category in category %}
+    {{category.type}}
+  {% endfor %}
+{% endblock %}
+
+{% block header %}
+  {% for category in category %}
+    {{category.type}}
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Клиенты{% endblock %}
+
+{% block body %}
+    <h3>Клиенты</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Scuare</th>
+                <th>Pronoun</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client in clients %}
+            <tr>
+                <td>{{ client.id }}</td>
+                <td>{{ client.name }}</td>
+                <td>{{ client.price }}</td>
+                <td>{{ client.scuare }}</td>
+                <td>{{ client.pronoun }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('app_info_arenda_show', {'id': client.id}) }}">Show</a>
+                    <a class="btn btn-primary" href="{{ path('app_info_arenda_edit', {'id': client.id}) }}">Edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('app_info_arenda_new') }}">Create new</a>
+{% endblock %}

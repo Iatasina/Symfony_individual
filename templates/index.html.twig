@@ -1,0 +1,50 @@
+{% extends('base.html.twig') %}
+
+{% block body %}
+
+    <h2 class="text-center mb-5">{% block header %}Lista filmelor{% endblock %}</h2>
+    
+    {% for message in app.flashes('success') %} 
+      <div class="alert alert-success">
+        {{ message }}
+      </div>
+    {% endfor %}
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+		  <td>Price</td>
+		  <td>Scuare</td>
+		  <td>Pronoun</td>
+		  <td>Category</td>
+          <th><div class="d-flex justify-content-center">Options</div></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for client in clients %}
+        <tr>
+          <td><a href="{{path('info_client',{id:client.id})}}">{{client.id}}</a></td>
+          <td>{{client.name}}</td>
+		  <td>{{client.price}}</td>
+		  <td>{{client.scuare}}</td>
+		  <td>{{client.pronoun}}</td>
+		  <td>{{client.Category}}</td>
+          <td>
+            <div class="d-flex justify-content-around">
+              <a href="{{path('edit_client',{id:client.id})}}">Edit</a>
+              <a class="text-danger" href="{{path('delete_client',{id:client.id})}}">Delete</a>
+            </div>
+          </td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+    
+    <div class="text-center">
+      <a class="btn btn-primary" href="{{ path('add_client') }}" role="button">Add</a>
+      <a class="btn btn-info" href="{{ path('search') }}" role="button">Search</a>
+    </div>
+
+{% endblock %}

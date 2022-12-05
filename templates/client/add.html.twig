@@ -1,0 +1,11 @@
+{% extends('base.html.twig') %}
+
+{% block title %}Add{% endblock %}
+
+{% block body %}
+  {{ form(form) }}
+  
+  <div class="text-center mt-5">
+    <a class="btn btn-primary" href="{{path('index')}}">Back</a>
+  </div>
+{% endblock %}

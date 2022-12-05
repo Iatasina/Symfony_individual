@@ -1,0 +1,33 @@
+{% extends('base.html.twig') %}
+
+{% block title %}Search{% endblock %}
+
+{% block body %}
+
+  <h2 class="text-center mb-5">Rental category</h2>
+
+  {#
+  <form class="w-50 mx-auto">
+    <select class="form-control">
+      {% for category in category %}
+      <option value="{{category.id}}">{{category.type}}</option>
+      {% endfor %}
+    </select>
+
+    <div class="text-center mt-3">
+      <a class="btn btn-success" href="{{path('index')}}">Search</a>
+    </div>
+  </form>
+  #}
+
+  <div class="text-center">
+  {% for category in category %}
+    <a class="btn btn-info" href="{{path('search_category',{id:category.id})}}">{{category.type}}</a>
+  {% endfor %}
+  </div>
+
+  <div class="text-center mt-3">
+    <a class="btn btn-primary" href="{{path('index')}}">Back</a>
+  </div>
+  
+{% endblock %}
